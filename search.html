@@ -11,7 +11,7 @@
       <input type="text" name="query" placeholder="Query">
       <button type="submit">Search</button>
     </form>
-    <button>Wishlist</button>
+    <a href="wishlist.html">Wishlist</a>
   </nav>
 
   <form action="search.html" method="get">
@@ -20,10 +20,14 @@
     <input type="text" id="location">
 
     <label for="max price">Max Price:</label>
-    <input type="number" min=300 max=2000 id="max-price">
-    
-    <label for="location">Location:</label>
-    <input type="text" id="location">
+    <input type="range" step=50 min=300 max=2000 value=500 id="max-price">
+
+    <label for="roommates"># Of Room mates:</label>
+    <input type="number" min=0 max=3 id="roommates">
+
+    <label for"kitchen">Includes Kitchen</label>
+    <input type="checkbox" id="kitchen>
+
     <button type="submit">Search</button>
   </form>
 
@@ -33,18 +37,22 @@
     <div>
       <h3>Dorm A</h3>
       <h4>Near Campus</h4>
+      <h5>Number of roommates: 2</h5>
       <h5>Price: $300/month</h5>
     </div>
     <div>
       <h3>Dorm Z</h3>
       <h4>On Campus</h4>
+      <h5>Number of roommates: 1</h5>
       <h5>Price: $550/month</h5>
     </div>
     <div>
       <h3>Dorm F</h3>
       <h4>Near Campus</h4>
+      <h5>Number of roommates: 3</h5>
       <h5>Price: $350/month</h5>
     </div>
   </div>
+
 </body>
 </html>
