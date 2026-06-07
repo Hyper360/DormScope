@@ -1,26 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>Dorm Scope</title>
   <meta charset="UTF-8">
-  <script src="js/components.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorm Scope | Rate a Dorm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/components/index.js" defer></script>
 </head>
 
 <body>
   <site-navbar></site-navbar>
 
-  <h2>Rate</h2>
-  <form>
-    <label for="rating">Dorm:</label>
-    <input type="number" min=1 max=5 value=3 id="rating"><br>
+  <main>
+    <section>
+      <h1>Rate a Dorm</h1>
+      <p>Share your experience by rating a dorm and leaving a comment.</p>
+    </section>
 
-    <label for="comment">Comment:</label>
-    <textarea rows=5 cols=25 id="comment">Input your comment here:</textarea><br>
+    <section>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Leave a rating</legend>
 
-    <button type="submit">Submit</button>
-  </form>
+          <div>
+            <label for="dorm-name">Dorm name</label>
+            <input type="text" id="dorm-name" name="dorm-name" placeholder="Dorm A" required>
+          </div>
 
-  <site-footer></site-footer>
+          <div>
+            <label for="rating">Rating (1-5)</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" value="3" required>
+          </div>
+
+          <div>
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" rows="5" placeholder="Share your dorm experience" required></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <site-footer></site-footer>
+  </footer>
 </body>
 
 </html>
