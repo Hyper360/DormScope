@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorm Scope | Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/components/index.js"></script>
+</head>
+
+<body>
+  <site-navbar></site-navbar>
+
+  <main>
+    <section>
+      <h1>Contact Us</h1>
+      <p>If you have questions about Dorm Scope or want to suggest a housing listing, please use the form below.</p>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <address>
+        <p>Email: <a href="mailto:test@my.yorku.ca">test@my.yorku.ca</a></p>
+        <p>Phone: <a href="tel:+11234567890">123-456-7890</a></p>
+        <p>Address: 1 University Boulevard, Markham, Ontario, Canada</p>
+      </address>
+    </section>
+
+    <section>
+      <h2>Send a Message</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Message subject" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <site-footer></site-footer>
+  </footer>
+</body>
+
+</html>
