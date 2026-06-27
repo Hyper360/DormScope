@@ -1,9 +1,13 @@
-form[action="#"] fieldset {
-  display: grid;
-  gap: 1rem;
-  max-width: 40rem;
+.rate-intro p {
+  max-width: 720px;
 }
 
-form[action="#"] button {
+.rate-fieldset {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.rate-submit {
   justify-self: start;
 }

@@ -13,33 +13,33 @@
 <body>
   <site-navbar></site-navbar>
 
-  <main>
-    <section>
+  <main class="rate-page">
+    <section class="rate-intro">
       <h1>Rate a Dorm</h1>
       <p>Share your experience by rating a dorm and leaving a comment.</p>
     </section>
 
-    <section>
-      <form action="#" method="post">
-        <fieldset>
+    <section class="rate-form-section">
+      <form class="rate-form" action="#" method="post">
+        <fieldset class="rate-fieldset">
           <legend>Leave a rating</legend>
 
-          <div>
+          <div class="rate-field">
             <label for="dorm-name">Dorm name</label>
             <input type="text" id="dorm-name" name="dorm-name" placeholder="Dorm A" required>
           </div>
 
-          <div>
+          <div class="rate-field">
             <label for="rating">Rating (1-5)</label>
             <input type="number" id="rating" name="rating" min="1" max="5" value="3" required>
           </div>
 
-          <div>
+          <div class="rate-field">
             <label for="comment">Comment</label>
             <textarea id="comment" name="comment" rows="5" placeholder="Share your dorm experience" required></textarea>
           </div>
 
-          <button type="submit">Submit</button>
+          <button class="rate-submit" type="submit">Submit</button>
         </fieldset>
       </form>
     </section>
