@@ -1,0 +1,90 @@
+main > section:first-of-type {
+	position: relative;
+	overflow: hidden;
+	padding: 40px 32px;
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 240, 232, 0.94));
+	animation: home-fade-up 700ms ease-out both;
+}
+
+main > section:first-of-type h1 {
+	max-width: 12ch;
+	line-height: 0.95;
+	animation: home-fade-up 800ms ease-out both;
+}
+
+main > section:first-of-type p {
+	max-width: 64ch;
+	font-size: 18px;
+	line-height: 1.7;
+	animation: home-fade-up 900ms ease-out both;
+}
+
+main > section:first-of-type p + p {
+	margin-top: 14px;
+	animation-delay: 140ms;
+}
+
+.search-results > h2 {
+	margin-bottom: 18px;
+	animation: home-fade-up 850ms ease-out both;
+}
+
+.search-results .listing-card {
+	animation: home-fade-up 700ms ease-out both;
+}
+
+.search-results .listing-card:nth-of-type(1) {
+	animation-delay: 120ms;
+}
+
+.search-results .listing-card:nth-of-type(2) {
+	animation-delay: 220ms;
+}
+
+.search-results .listing-card:nth-of-type(3) {
+	animation-delay: 320ms;
+}
+
+.search-results .listing-card:nth-of-type(4) {
+	animation-delay: 420ms;
+}
+
+@keyframes home-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+	main > section:first-of-type,
+	main > section:first-of-type h1,
+	main > section:first-of-type p,
+	.search-results > h2,
+	.search-results .listing-card {
+		animation: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	main > section:first-of-type {
+		padding: 52px 44px;
+	}
+}
+
+@media (max-width: 759px) {
+	main > section:first-of-type {
+		padding: 28px 22px;
+	}
+
+	main > section:first-of-type p {
+		font-size: 16px;
+	}
+}
