@@ -1,0 +1,12 @@
+.about-intro p {
+	max-width: 900px;
+}
+
+.faq-item {
+	padding: 16px 0;
+	border-top: 1px solid var(--border-soft);
+}
+
+.faq-item h3 {
+	margin-bottom: 8px;
+}
