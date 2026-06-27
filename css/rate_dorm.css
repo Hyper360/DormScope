@@ -1,0 +1,9 @@
+form[action="#"] fieldset {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+}
+
+form[action="#"] button {
+  justify-self: start;
+}

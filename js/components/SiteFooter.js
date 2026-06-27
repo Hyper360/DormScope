@@ -1,3 +1,8 @@
+const footerStyles = document.createElement('link');
+footerStyles.rel = 'stylesheet';
+footerStyles.href = new URL('../../css/footer.css', import.meta.url).href;
+document.head.appendChild(footerStyles);
+
 class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

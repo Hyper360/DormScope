@@ -1,0 +1,16 @@
+form[action="search.html"] fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+form[action="search.html"] fieldset > button {
+  justify-self: start;
+}
+
+@media (max-width: 720px) {
+  form[action="search.html"] fieldset {
+    grid-template-columns: 1fr;
+  }
+}
