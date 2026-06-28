@@ -1,79 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-	--page-background: #efeee7;
-	--surface: rgba(255, 255, 255, 0.9);
-	--text-primary: #2b3d39;
-	--text-secondary: #71807a;
-	--accent: #32504b;
-	--border-soft: rgba(50, 80, 75, 0.11);
-	--radius-lg: 28px;
-	--radius-md: 20px;
-	--content-width: 1120px;
+  --page-background: #efeee7;
+  --surface: rgba(255, 255, 255, 0.9);
+  --text-primary: #2b3d39;
+  --text-secondary: #71807a;
+  --accent: #32504b;
+  --border-soft: rgba(50, 80, 75, 0.11);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --content-width: 1120px;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	min-height: 100vh;
-	font-family: 'Plus Jakarta Sans', sans-serif;
-	color: var(--text-primary);
-	background: #f7f5ef;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  background: #f7f5ef;
 }
 
 img {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 main a {
-	color: var(--accent);
-	text-decoration: none;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 main a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 main {
-	width: min(calc(100% - 32px), var(--content-width));
-	margin: 0 auto;
-	padding: 32px 0 64px;
+  width: min(calc(100% - 32px), var(--content-width));
+  margin: 0 auto;
+  padding: 32px 0 64px;
 }
 
-main > section,
-main > article {
-	margin-bottom: 24px;
-	padding: 24px;
-	background: var(--surface);
-	border: 1px solid var(--border-soft);
-	border-radius: var(--radius-lg);
+main>section,
+main>article {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
 }
 
 main h1,
 main h2,
 main h3 {
-	margin: 0 0 12px;
-	color: var(--text-primary);
+  margin: 0 0 12px;
+  color: var(--text-primary);
 }
 
 main h1 {
-	font-size: 48px;
-	font-weight: 800;
-	max-width: 1000px;
+  font-size: 48px;
+  font-weight: 800;
+  max-width: 1000px;
 }
 
 main h2 {
-	font-size: 28px;
-	font-weight: 700;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 main h3 {
-	font-size: 18px;
-	font-weight: 700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 main p,
@@ -85,139 +85,158 @@ main button,
 main select,
 main legend,
 main address {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 main p,
 main ul,
 main ol,
 main address {
-	margin: 0;
-	color: var(--text-secondary);
+  margin: 0;
+  color: var(--text-secondary);
 }
 
-main > section > p + p,
-main > article > p + p,
-main li + li {
-	margin-top: 12px;
+main>section>p+p,
+main>article>p+p,
+main li+li {
+  margin-top: 12px;
 }
 
 main ul,
 main ol {
-	padding-left: 18px;
+  padding-left: 18px;
 }
 
 main hr {
-	height: 1px;
-	margin: 20px 0;
-	border: 0;
-	background: linear-gradient(90deg, transparent, rgba(38, 63, 61, 0.18), transparent);
+  height: 1px;
+  margin: 20px 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(38, 63, 61, 0.18), transparent);
 }
 
 main button,
 main .button,
 main input[type='submit'] {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 48px;
-	padding: 14px 22px;
-	border: 1px solid transparent;
-	border-radius: 999px;
-	background: var(--accent);
-	color: #f7f7f4;
-	font-weight: 700;
-	cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #f7f7f4;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 main form {
-	display: grid;
-	gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 main fieldset {
-	margin: 0;
-	padding: 20px;
-	border: 1px solid var(--border-soft);
-	border-radius: var(--radius-md);
-	background: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 main legend,
 main label {
-	font-weight: 700;
-	color: var(--text-primary);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 main form div {
-	display: grid;
-	gap: 7px;
-	margin-bottom: 14px;
+  display: grid;
+  gap: 7px;
+  margin-bottom: 14px;
 }
 
 main form div:last-of-type {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 main input:not([type='checkbox']):not([type='range']),
 main input[type='number'],
 main textarea,
 main select {
-	width: 100%;
-	padding: 14px 16px;
-	border: 1px solid rgba(38, 63, 61, 0.14);
-	border-radius: 16px;
-	background: #ffffff;
-	color: var(--text-primary);
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(38, 63, 61, 0.14);
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--text-primary);
 }
 
 main input::placeholder,
 main textarea::placeholder {
-	color: #98a19a;
+  color: #98a19a;
 }
 
 main input[type='checkbox'] {
-	width: 16px;
-	height: 16px;
-	accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
 }
 
 main input[type='range'] {
-	width: 100%;
-	accent-color: var(--accent);
+  width: 100%;
+  accent-color: var(--accent);
 }
 
+nav {
+  animation: base-fade-up 600ms ease-out both;
+}
+
+footer {
+  animation: base-fade-up 700ms ease-out both;
+}
 
 @media (min-width: 760px) {
-	main {
-		padding-top: 40px;
-	}
+  main {
+    padding-top: 40px;
+  }
 }
 
 @media (min-width: 1024px) {
-	main {
-		padding-bottom: 80px;
-	}
+  main {
+    padding-bottom: 80px;
+  }
 
-	main > section:first-of-type {
-		padding-top: 35px;
-		padding-bottom: 35px;
-	}
+  main>section:first-of-type {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
 }
 
 @media (max-width: 759px) {
-	main {
-		width: min(calc(100% - 20px), var(--content-width));
-		padding-top: 20px;
-	}
+  main {
+    width: min(calc(100% - 20px), var(--content-width));
+    padding-top: 20px;
+  }
 
-	main > section,
-	main > article {
-		padding: 19px;
-		border-radius: 22px;
-	}
+  main>section,
+  main>article {
+    padding: 19px;
+    border-radius: 22px;
+  }
 
-	main h1 {
-		max-width: 100%;
-	}
+  main h1 {
+    max-width: 100%;
+  }
+}
+
+@keyframes base-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

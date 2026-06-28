@@ -6,6 +6,17 @@ nav {
   margin: 1rem;
   padding: 1rem;
 
+  & #header-title {
+    font-size: 2em;
+    padding-right: 1rem;
+  }
+
+  & a {
+    transition:
+      color 300ms ease-out,
+      font-size 300ms ease-out;
+  }
+
   & a,
   & a:visited,
   & a:hover,
@@ -19,15 +30,14 @@ nav {
 
   & a:hover {
     color: purple;
+    font-size: 1.4em;
   }
 
   & form {
     align-self: center;
 
     & button:hover {
-      background-color: purple;
       color: white;
     }
   }
-
 }

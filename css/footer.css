@@ -13,8 +13,10 @@ footer {
     margin: 0;
   }
 
-  & #footer-title {
-    font-size: 2em;
+  & a {
+    transition:
+      color 300ms ease-out,
+      font-size 300ms ease-out;
   }
 
   & a,
@@ -28,5 +30,6 @@ footer {
 
   & a:hover {
     color: purple;
+    font-size: 1.2em;
   }
 }

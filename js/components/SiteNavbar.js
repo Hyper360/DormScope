@@ -8,6 +8,7 @@ class SiteNavbar extends HTMLElement {
     this.innerHTML = `
     <header>
       <nav aria-label="Main navigation">
+        <span id="header-title">DormScope 2026</span>
         <a href="index.html">Home</a>
         <a href="search.html">Search</a>
         <a href="about.html">About</a>
