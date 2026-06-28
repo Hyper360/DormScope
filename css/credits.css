@@ -1,0 +1,131 @@
+main > section:first-of-type {
+	position: relative;
+	overflow: hidden;
+	padding: 40px 32px;
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 240, 232, 0.94));
+	animation: credits-fade-up 700ms ease-out both;
+}
+
+main > section:first-of-type h1 {
+	max-width: 12ch;
+	line-height: 0.95;
+	animation: credits-fade-up 800ms ease-out both;
+}
+
+main > section:first-of-type p {
+	max-width: 64ch;
+	font-size: 18px;
+	line-height: 1.7;
+	animation: credits-fade-up 900ms ease-out both;
+}
+
+/* Credits List */
+main ul {
+	display: grid;
+	gap: 14px;
+	max-width: 720px;
+	padding-left: 0;
+	margin-top: 24px;
+	list-style: none;
+}
+
+/* Credit Items */
+main li {
+	position: relative;
+	padding: 16px 18px 16px 54px;
+	background: rgba(255, 255, 255, 0.96);
+	border: 1px solid var(--border-soft);
+	border-radius: 18px;
+	color: var(--text-primary);
+	font-weight: 700;
+	line-height: 1.6;
+	animation: credits-fade-up 700ms ease-out both;
+	transition:
+		transform 200ms ease,
+		box-shadow 200ms ease;
+}
+
+main li:nth-of-type(1) {
+	animation-delay: 120ms;
+}
+
+main li:nth-of-type(2) {
+	animation-delay: 220ms;
+}
+
+main li:nth-of-type(3) {
+	animation-delay: 320ms;
+}
+
+main li:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 26px rgba(43, 61, 57, 0.08);
+}
+
+/* Check Icon */
+main li::before {
+	content: "✓";
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	width: 24px;
+	height: 24px;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: var(--accent);
+	color: #ffffff;
+	display: grid;
+	place-items: center;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+/* Animation */
+@keyframes credits-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	main > section:first-of-type,
+	main > section:first-of-type h1,
+	main > section:first-of-type p,
+	main li {
+		animation: none;
+	}
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	main > section:first-of-type {
+		padding: 52px 44px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 759px) {
+	main > section:first-of-type {
+		padding: 28px 22px;
+	}
+
+	main > section:first-of-type p {
+		font-size: 16px;
+	}
+
+	main li {
+		padding: 16px 18px 16px 50px;
+	}
+
+	main li::before {
+		left: 16px;
+	}
+}
