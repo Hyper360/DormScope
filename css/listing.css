@@ -1,0 +1,156 @@
+.search-results {
+	display: grid;
+	gap: 0;
+}
+
+.search-results hr {
+	margin: 24px 0;
+	border: 0;
+	border-top: 1px solid;
+}
+
+.listing-card {
+	display: grid;
+	gap: 16px;
+	padding: 22px;
+	border: 1px solid var(--border-soft);
+	border-radius: var(--radius-md);
+	background: rgba(255, 255, 255, 0.84);
+	box-shadow: none;
+}
+
+.listing-card img,
+.listing-hero img {
+	width: 100%;
+	border-radius: 18px;
+	object-fit: cover;
+	background: #dde3db;
+}
+
+.listing-card img {
+	aspect-ratio: 3 / 2;
+}
+
+.listing-card h3,
+.listing-summary h1 {
+	margin: 0;
+}
+
+.listing-card h3 {
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+.listing-card p,
+.listing-summary p,
+.review-item p {
+	line-height: 1.65;
+}
+
+.listing-card p strong,
+.listing-summary p strong {
+	font-size: 20px;
+	color: var(--accent);
+}
+
+.listing-card a {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.listing-card a:hover {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+.listing-page {
+	display: grid;
+	gap: 24px;
+}
+
+.listing-page > p:first-child {
+	margin: 0;
+}
+
+.listing-page > p:first-child a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 700;
+}
+
+.listing-page > p:first-child a::before {
+	content: '\2190';
+}
+
+.listing-hero {
+	display: grid;
+	gap: 24px;
+	align-items: start;
+}
+
+.listing-hero img {
+	aspect-ratio: 16 / 10;
+	min-height: 280px;
+}
+
+.listing-summary {
+	display: grid;
+	gap: 10px;
+}
+
+.listing-summary h1 {
+	font-size: clamp(2.4rem, 4vw, 3.4rem);
+	line-height: 0.98;
+}
+
+.listing-page ul {
+	display: grid;
+	gap: 10px;
+}
+
+.listing-page li::marker {
+	color: var(--accent);
+}
+
+.review-item {
+	padding: 18px 20px;
+	border: 1px solid var(--border-soft);
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.78);
+}
+
+.review-item + .review-item {
+	margin-top: 14px;
+}
+
+.review-item strong {
+	color: var(--text-primary);
+}
+
+@media (min-width: 760px) {
+	.listing-card {
+		grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+		align-items: start;
+	}
+
+	.listing-hero {
+		grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
+	}
+}
+
+@media (max-width: 759px) {
+	.listing-card {
+		padding: 18px;
+		border-radius: 18px;
+	}
+
+	.listing-card h3 {
+		font-size: 21px;
+	}
+
+	.listing-hero img {
+		min-height: 220px;
+	}
+}

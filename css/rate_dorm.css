@@ -1,0 +1,13 @@
+.rate-intro p {
+  max-width: 720px;
+}
+
+.rate-fieldset {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.rate-submit {
+  justify-self: start;
+}

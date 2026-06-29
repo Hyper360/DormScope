@@ -1,0 +1,155 @@
+main > section:first-of-type {
+	position: relative;
+	overflow: hidden;
+	padding: 40px 32px;
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 240, 232, 0.94));
+	animation: contact-fade-up 700ms ease-out both;
+}
+
+main > section:first-of-type h1 {
+	max-width: 12ch;
+	line-height: 0.95;
+	animation: contact-fade-up 800ms ease-out both;
+}
+
+main > section:first-of-type p {
+	max-width: 64ch;
+	font-size: 18px;
+	line-height: 1.7;
+	animation: contact-fade-up 900ms ease-out both;
+}
+
+/* Content Sections */
+main > section:nth-of-type(2),
+main > section:nth-of-type(3) {
+	animation: contact-fade-up 850ms ease-out both;
+}
+
+main > section:nth-of-type(2) {
+	animation-delay: 120ms;
+}
+
+main > section:nth-of-type(3) {
+	animation-delay: 220ms;
+}
+
+/* Contact Information */
+address {
+	display: grid;
+	gap: 14px;
+	font-style: normal;
+}
+
+address p {
+	padding: 16px 18px;
+	background: rgba(255, 255, 255, 0.96);
+	border: 1px solid var(--border-soft);
+	border-radius: 18px;
+	line-height: 1.6;
+}
+
+address a {
+	color: var(--accent);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+address a:hover {
+	text-decoration: underline;
+}
+
+/* Contact Form */
+form {
+	max-width: 760px;
+}
+
+form div {
+	display: grid;
+	gap: 6px;
+	margin-bottom: 18px;
+}
+
+form label {
+	font-weight: 700;
+}
+
+input,
+textarea {
+	border-radius: 14px;
+	transition:
+		border-color 200ms ease,
+		box-shadow 200ms ease;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--accent);
+	box-shadow: 0 0 0 4px rgba(50, 80, 75, 0.12);
+}
+
+textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+/* Button */
+button[type="submit"] {
+	width: fit-content;
+	margin-top: 4px;
+	transition:
+		transform 200ms ease,
+		opacity 200ms ease;
+}
+
+button[type="submit"]:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
+}
+
+/* Animation */
+@keyframes contact-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	main > section:first-of-type,
+	main > section:first-of-type h1,
+	main > section:first-of-type p,
+	main > section:nth-of-type(2),
+	main > section:nth-of-type(3) {
+		animation: none;
+	}
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	main > section:first-of-type {
+		padding: 52px 44px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 759px) {
+	main > section:first-of-type {
+		padding: 28px 22px;
+	}
+
+	main > section:first-of-type p {
+		font-size: 16px;
+	}
+
+	button[type="submit"] {
+		width: 100%;
+	}
+}
