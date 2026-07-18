@@ -1,4 +1,7 @@
 -- for use in Supabase
+delete from public.reviews;
+delete from public.listings;
+
 insert into public.listings (
   slug,
   name,
