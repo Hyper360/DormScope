@@ -56,6 +56,7 @@ function showListing(content, listing, reviews) {
         ${details}
         ${rating}
         ${listedBy}
+        <p><a class="button" href="rate_dorm.html?slug=${encodeURIComponent(listing.slug)}">Rate this dorm</a></p>
       </div>
     </section>
     <section>
@@ -82,13 +83,14 @@ async function getData(url) {
 async function loadListing() {
   const content = document.querySelector('#listing-content');
   const query = new URLSearchParams(window.location.search);
-  const id = query.get('id');
-  const slug = query.get('slug');
+  let id = query.get('id');
+  let slug = query.get('slug');
 
   if (!id && !slug) {
-    // nothing was selected - fallback
-    content.textContent = 'Choose a dorm from the search results to view its details.';
-    return;
+    slug = 'stong-residence';
+    const defaultUrl = new URL(window.location.href);
+    defaultUrl.searchParams.set('slug', slug);
+    window.history.replaceState({}, '', defaultUrl);
   }
 
   const config = window.DormScopeConfig;
