@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setHint(hintBox, "Submitting your review...");
 
     try {
+      await ensureGuestSession(supabase);
       const payload = {
         listing_id: listing.id,
         author_name: review.authorName,
@@ -179,6 +180,36 @@ function getSupabaseClient() {
   }
 
   return window.supabase.createClient(config.supabaseUrl, config.supabasePublishableKey);
+}
+
+async function ensureGuestSession(supabase) {
+  const {
+    data: { session },
+    error: sessionError
+  } = await supabase.auth.getSession();
+
+  if (sessionError) {
+    throw new Error(`Could not check the guest session: ${sessionError.message}`);
+  }
+
+  if (session) {
+    return session;
+  }
+
+  const {
+    data,
+    error: signInError
+  } = await supabase.auth.signInAnonymously();
+
+  if (signInError) {
+    throw new Error(`Guest sign-in failed: ${signInError.message}`);
+  }
+
+  if (!data.session) {
+    throw new Error("Guest sign-in did not create a session.");
+  }
+
+  return data.session;
 }
 
 function getListingContext() {
