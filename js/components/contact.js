@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const contactForm = document.querySelector("form");
+	const contactForm = document.querySelector("#contact-form");
 	const nameInput = document.querySelector("#name");
 	const emailInput = document.querySelector("#email");
 	const subjectInput = document.querySelector("#subject");
