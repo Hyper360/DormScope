@@ -1,6 +1,6 @@
 const navbarStyles = document.createElement('link');
 navbarStyles.rel = 'stylesheet';
-navbarStyles.href = new URL('../../css/navbar.css', import.meta.url).href;
+navbarStyles.href = new URL('../../css/navbar.css', document.currentScript.src).href;
 document.head.appendChild(navbarStyles);
 
 class SiteNavbar extends HTMLElement {
