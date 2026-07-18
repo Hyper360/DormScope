@@ -19,8 +19,18 @@ create table if not exists public.listings (
   listed_by text,
   amenities text[] not null default '{}',
   house_rules text[] not null default '{}',
+  utilities text[] not null default '{}',
+  summary_details text[] not null default '{}',
   created_at timestamptz not null default now()
 );
+
+-- These statements also add the fields if the table was created before this
+-- version of the schema.
+alter table public.listings
+  add column if not exists utilities text[] not null default '{}';
+
+alter table public.listings
+  add column if not exists summary_details text[] not null default '{}';
 
 create table if not exists public.reviews (
   id uuid primary key default gen_random_uuid(),

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/listing.css">
   <link rel="stylesheet" href="css/home.css">
   <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
   <script src="js/components/index.js"></script>
   <script src="js/home.js" defer></script>
 </head>
@@ -27,13 +28,12 @@
       </p>
     </section>
 
-    <section class="search-results">
+    <section id="featured-listings" class="search-results" aria-live="polite">
       <h2>Featured Dorms</h2>
-      <article class="listing-card">
-        <img src="https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/markham-housing/Shared-Room.jpg"
-        <div id="featured-listings" aria-live="polite">
-          <p>Loading featured dorms...</p>
-        </div>
+      <p>Loading featured dorms...</p>
+    </section>
+  </main>
+
   <footer>
     <site-footer></site-footer>
   </footer>

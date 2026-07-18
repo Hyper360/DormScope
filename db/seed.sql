@@ -1,4 +1,11 @@
 -- for use in Supabase
+-- This script clears all listings and reviews before adding fresh seed data.
+alter table public.listings
+  add column if not exists utilities text[] not null default '{}';
+
+alter table public.listings
+  add column if not exists summary_details text[] not null default '{}';
+
 delete from public.reviews;
 delete from public.listings;
 
@@ -20,7 +27,9 @@ insert into public.listings (
   image_alt,
   listed_by,
   amenities,
-  house_rules
+  house_rules,
+  utilities,
+  summary_details
 )
 values
   (
@@ -40,8 +49,10 @@ values
     'https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/stong-residence/Stong-double-2.JPG',
     'York University Stong Residence',
     'York University Housing',
+    array['Swimming pool', 'Gym', 'Sauna', 'Study lounge', 'Secure building access'],
+    array['No overnight guests', 'No cannabis', 'No pets allowed', 'Quiet hours after 11pm'],
     array['Air conditioning', 'Internet', 'Heating', 'Washer & Dryer', 'Cable TV'],
-    array['No overnight guests', 'No cannabis', 'No pets allowed', 'Quiet hours after 11pm']
+    array['0.7 km from York University', 'Private room in residence', 'Available now', 'Utilities included', 'Furnished']
   ),
   (
     'four-winds-townhouse',
@@ -61,7 +72,9 @@ values
     'Four Winds Drive shared townhouse',
     'Off-campus landlord',
     array['Shared kitchen', 'Backyard space', 'Nearby grocery stores', 'Transit-friendly location', 'Furnished common areas'],
-    array['Male tenants only', 'No smoking indoors', 'No pets allowed', 'Quiet hours after 10:30pm']
+    array['Male tenants only', 'No smoking indoors', 'No pets allowed', 'Quiet hours after 10:30pm'],
+    array['Hydro included', 'Internet', 'Heat included', 'Water included', 'Laundry in home'],
+    array['0.5 km to Finch West Station', 'Private room, shared bathroom', 'Available now', 'Utilities included', 'Male-only housing', 'Shared kitchen access']
   ),
   (
     'the-quad-yorku',
@@ -81,7 +94,9 @@ values
     'The Quad YorkU',
     'The Quad YorkU',
     array['Fitness centre', 'Study spaces', 'Games lounge', 'Secure building access', 'Package lockers'],
-    array['Guest policy applies', 'No smoking indoors', 'Pets subject to management approval', 'Quiet hours after 11pm']
+    array['Guest policy applies', 'No smoking indoors', 'Pets subject to management approval', 'Quiet hours after 11pm'],
+    array['Air conditioning', 'Internet', 'Heating', 'In-suite laundry', 'Water included'],
+    array['Suite Style 2 bed • 1 bath', 'Full XL bed with desk and TV', 'Kitchen with fridge, stove, microwave', 'Utilities included', 'Furnished', 'Modern student community', 'Close to York University']
   ),
   (
     'hilliard-residence',
@@ -101,7 +116,9 @@ values
     'Hilliard Residence',
     'York University Housing',
     array['Shared kitchen', 'Study lounge', 'Laundry facilities', 'Campus access'],
-    array['No smoking indoors', 'No pets allowed', 'Quiet hours after 11pm']
+    array['No smoking indoors', 'No pets allowed', 'Quiet hours after 11pm'],
+    array['Internet', 'Heating', 'Water included', 'Laundry facilities'],
+    array['0.2 km from York University Glendon campus', 'Traditional residence room', 'Move-in ready', 'Utilities included', 'Furnished']
   ),
   (
     'calumet-residence',
@@ -121,7 +138,9 @@ values
     'Calumet Residence shared room',
     'York University Housing',
     array['Shared kitchen', 'Study lounge', 'Laundry facilities', 'Campus dining nearby'],
-    array['No smoking indoors', 'No pets allowed', 'Quiet hours after 11pm']
+    array['No smoking indoors', 'No pets allowed', 'Quiet hours after 11pm'],
+    array['Internet', 'Heating', 'Water included', 'Laundry facilities'],
+    array['0.4 km from York University Keele campus', 'Shared double room', 'Available for the fall term', 'Utilities included', 'Furnished']
   ),
   (
     'village-at-york',
@@ -141,7 +160,9 @@ values
     'York University Markham Residence shared room',
     'Private landlord',
     array['Shared kitchen', 'Backyard', 'Nearby grocery stores', 'TTC access'],
-    array['No smoking indoors', 'Guests by agreement', 'Keep shared spaces clean']
+    array['No smoking indoors', 'Guests by agreement', 'Keep shared spaces clean'],
+    array['Internet', 'Heat included', 'Water included'],
+    array['1.2 km from York University', 'Private room in a shared house', 'Available now', 'Shared kitchen access']
   ),
   (
     'passy-gardens-apartment',
@@ -161,7 +182,9 @@ values
     'York University Calumet Residence room',
     'Passy Gardens Management',
     array['In-suite kitchen', 'Laundry room', 'Secure entry', 'Transit nearby'],
-    array['No smoking indoors', 'Pets require approval', 'Quiet hours after 11pm']
+    array['No smoking indoors', 'Pets require approval', 'Quiet hours after 11pm'],
+    array['Internet', 'Heating', 'Water included', 'Laundry room'],
+    array['2.1 km from York University', 'One-bedroom apartment', 'Available September 1', 'Utilities included', 'Furnished']
   )
 on conflict (slug) do update
 set
@@ -181,7 +204,9 @@ set
   image_alt = excluded.image_alt,
   listed_by = excluded.listed_by,
   amenities = excluded.amenities,
-  house_rules = excluded.house_rules;
+  house_rules = excluded.house_rules,
+  utilities = excluded.utilities,
+  summary_details = excluded.summary_details;
 
 insert into public.reviews (listing_id, author_name, rating, comment)
 select listings.id, reviews.author_name, reviews.rating, reviews.comment
