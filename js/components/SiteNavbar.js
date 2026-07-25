@@ -14,7 +14,7 @@ class SiteNavbar extends HTMLElement {
       <a href="contact.html">Contact</a>
       <a href="credits.html">Credits</a>
       <form action="search.html" method="get">
-        <input type="text" name="query" placeholder="Query">
+        <input type="text" name="location" placeholder="Location">
         <button type="submit">Search</button>
       </form>
     </nav>

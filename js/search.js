@@ -28,10 +28,8 @@ function setMessage(element, message) {
 
 function readFilters(form) {
   const formData = new FormData(form);
-  const params = new URLSearchParams(window.location.search);
 
   return {
-    query: String(formData.get('query') || params.get('query') || '').trim(),
     location: String(formData.get('location') || '').trim(),
     maxPrice: Number(formData.get('max-price')),
     roommates: formData.get('roommates') === '' ? null : Number(formData.get('roommates')),
@@ -41,10 +39,6 @@ function readFilters(form) {
 
 function validateFilters(filters) {
   const errors = [];
-
-  if (filters.query && filters.query.length < 2) {
-    errors.push('Keyword must be at least 2 characters.');
-  }
 
   if (filters.location && filters.location.length < 2) {
     errors.push('Location must be at least 2 characters.');
@@ -64,9 +58,6 @@ function validateFilters(filters) {
 function populateFormFromUrl(form) {
   const params = new URLSearchParams(window.location.search);
 
-  if (form.elements.query) {
-    form.elements.query.value = params.get('query') || '';
-  }
   form.elements.location.value = params.get('location') || '';
   form.elements['max-price'].value = params.get('max-price') || '2000';
   form.elements.roommates.value = params.get('roommates') || '';
@@ -78,21 +69,16 @@ function updatePriceOutput(input, output) {
   output.textContent = `$${Number(input.value).toLocaleString('en-CA')}`;
 }
 
-function getSearchableText(listing, fields) {
-  return fields
-    .flatMap((field) => listing[field] || [])
-    .join(' ')
-    .toLowerCase();
+function getLocationMatchRank(listing, location) {
+  const searchTerm = normalize(location);
+  if (!searchTerm) return 0;
+
+  return ['location', 'name', 'description']
+    .findIndex((field) => normalize(listing[field]).includes(searchTerm));
 }
 
 function matchesFilters(listing, filters) {
-  const keywordText = getSearchableText(listing, [
-    'name', 'location', 'description', 'room_type', 'availability_note', 'listed_by', 'amenities'
-  ]);
-  const locationText = getSearchableText(listing, ['name', 'location', 'description']);
-
-  if (filters.query && !keywordText.includes(normalize(filters.query))) return false;
-  if (filters.location && !locationText.includes(normalize(filters.location))) return false;
+  if (getLocationMatchRank(listing, filters.location) === -1) return false;
   if (Number(listing.price_cents) > filters.maxPrice * 100) return false;
   if (filters.kitchen && listing.has_kitchen !== true) return false;
 
@@ -198,7 +184,6 @@ async function fetchListings() {
 function updateUrl(filters) {
   const params = new URLSearchParams();
 
-  if (filters.query) params.set('query', filters.query);
   if (filters.location) params.set('location', filters.location);
   if (filters.maxPrice !== 2000) params.set('max-price', String(filters.maxPrice));
   if (filters.roommates !== null) params.set('roommates', String(filters.roommates));
@@ -209,7 +194,9 @@ function updateUrl(filters) {
 }
 
 function renderResults(listings, filters, elements) {
-  const matches = listings.filter((listing) => matchesFilters(listing, filters));
+  const matches = listings
+    .filter((listing) => matchesFilters(listing, filters))
+    .sort((a, b) => getLocationMatchRank(a, filters.location) - getLocationMatchRank(b, filters.location));
   elements.results.replaceChildren();
 
   if (matches.length === 0) {
