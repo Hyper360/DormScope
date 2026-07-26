@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/listing.css">
   <link rel="stylesheet" href="css/home.css">
-  <script type="module" src="js/components/index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/components/index.js"></script>
+  <script src="js/home.js" defer></script>
 </head>
 
 <body>
@@ -25,63 +28,9 @@
       </p>
     </section>
 
-    <section class="search-results">
+    <section id="featured-listings" class="search-results" aria-live="polite">
       <h2>Featured Dorms</h2>
-      <article class="listing-card">
-        <img src="https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/markham-housing/Shared-Room.jpg"
-          alt="York Markham Residence" width="300" height="200">
-        <h3>York University Markham Residence 1 bed 1 bath</h3>
-        <p><strong>$1030 / Bedroom</strong></p>
-        <p>0.1 km from York University Markham Campus</p>
-        <p>Private room in residence</p>
-        <p>Utilities included</p>
-        <p>4.5★ (22 reviews)</p>
-        <p>Furnished</p>
-      </article>
-      <hr>
-
-      <article class="listing-card">
-        <img
-          src="https://carolinau.edu/sites/default/files/inline-images/Stevens%20W%20dorm%20-03.jpg"
-          alt="Premium Plus Room Toronto York Uni" width="300" height="200">
-        <h3>Premium Plus Room Toronto York Uni</h3>
-        <p><strong>$930 / Bedroom</strong></p>
-        <p>0.5 km to Finch West Station</p>
-        <p>Private room, shared bathroom</p>
-        <p>Utilities included</p>
-        <p>Male-only housing</p>
-        <p>Available now</p>
-      </article>
-      <hr>
-
-
-      <article class="listing-card">
-        <img
-          src="https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/calumet-residence/Double-Interior-Landscape-edit-2.jpg"
-          alt="Calumet Residence Shared Double Bedroom" width="300" height="200">
-        <h3>Calumet Res Shared Double Bedroom</h3>
-        <p><strong>$1500/month</strong></p>
-        <p>Suite Style 2 bed • 1 bath</p>
-        <p>Full XL bed with desk and TV</p>
-        <p>Kitchen with fridge, stove, microwave</p>
-        <p>Utilities included</p>
-        <p>Furnished</p>
-      </article>
-      <hr>
-
-      <article class="listing-card">
-        <img
-          src="https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/hilliard-glendon-residence/DSC_1725.JPG"
-          alt="Hilliard Residence" width="300" height="200">
-        <h3>Hilliard Residence</h3>
-        <p><strong>$1,020 / Bedroom</strong></p>
-        <p>Steps from York University Glendon campus</p>
-        <p>Traditional residence room</p>
-        <p>Shared common spaces</p>
-        <p>Utilities included</p>
-        <p>Move-in ready</p>
-      </article>
-      <hr>
+      <p>Loading featured dorms...</p>
     </section>
   </main>
 

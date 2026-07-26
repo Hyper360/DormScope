@@ -1,6 +1,6 @@
 const listingStyles = document.createElement('link');
 listingStyles.rel = 'stylesheet';
-listingStyles.href = new URL('../../css/listing.css', import.meta.url).href;
+listingStyles.href = new URL('../../css/listing.css', document.currentScript.src).href;
 document.head.appendChild(listingStyles);
 
 class DormListing extends HTMLElement {
