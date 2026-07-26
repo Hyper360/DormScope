@@ -83,14 +83,12 @@ async function getData(url) {
 async function loadListing() {
   const content = document.querySelector('#listing-content');
   const query = new URLSearchParams(window.location.search);
-  let id = query.get('id');
-  let slug = query.get('slug');
+  const id = query.get('id');
+  const slug = query.get('slug');
 
   if (!id && !slug) {
-    slug = 'stong-residence';
-    const defaultUrl = new URL(window.location.href);
-    defaultUrl.searchParams.set('slug', slug);
-    window.history.replaceState({}, '', defaultUrl);
+    content.textContent = 'Choose a listing from the search page to view its details.';
+    return;
   }
 
   const config = window.DormScopeConfig;

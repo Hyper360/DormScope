@@ -1,9 +1,3 @@
-const listingPages = {
-  'stong-residence': 'listing.html',
-  'four-winds-townhouse': 'listing2.html',
-  'the-quad-yorku': 'listing3.html'
-};
-
 let cachedListings = null;
 
 function formatPrice(priceCents, pricePeriod) {
@@ -98,15 +92,8 @@ function createTextElement(tag, text) {
 
 function createListingTitle(listing) {
   const title = document.createElement('h3');
-  const pageUrl = listingPages[listing.slug];
-
-  if (!pageUrl) {
-    title.textContent = listing.name;
-    return title;
-  }
-
   const link = document.createElement('a');
-  link.href = pageUrl;
+  link.href = `listing.html?id=${encodeURIComponent(listing.id)}`;
   link.textContent = listing.name;
   title.appendChild(link);
   return title;
