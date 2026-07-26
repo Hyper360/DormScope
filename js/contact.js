@@ -1,10 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initContactForm() {
 	const contactForm = document.querySelector("#contact-form");
 	const nameInput = document.querySelector("#name");
 	const emailInput = document.querySelector("#email");
 	const subjectInput = document.querySelector("#subject");
 	const messageInput = document.querySelector("#message");
 	const feedbackMessage = document.querySelector("#form-feedback");
+
+	if (!contactForm || !nameInput || !emailInput || !subjectInput || !messageInput || !feedbackMessage) {
+		return;
+	}
 
 	contactForm.addEventListener("submit", (event) => {
 		event.preventDefault();
@@ -80,4 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			field.classList.remove("valid-input", "invalid-input");
 		});
 	}
-});
+}
+
+initContactForm();
