@@ -73,13 +73,45 @@ form[action="search.html"] input[type="range"] {
   margin-top: 8px;
 }
 
+.range-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+#max-price-value {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 form[action="search.html"] fieldset > button {
   justify-self: start;
   align-self: center;
 }
 
+.search-message {
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.search-message-error {
+  color: #9f1d1d;
+}
+
 .search-results > h2 {
   margin-bottom: 18px;
+}
+
+#search-results-list {
+  display: grid;
+  gap: 0;
+}
+
+#search-results-list:empty {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

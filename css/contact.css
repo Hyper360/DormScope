@@ -153,3 +153,30 @@ button[type="submit"]:hover {
 		width: 100%;
 	}
 }
+
+/* Form Validation Feedback */
+.form-feedback {
+	margin-top: 4px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.error-message {
+	color: #9f1d1d;
+}
+
+.success-message {
+	color: #2f6b3f;
+}
+
+input.invalid-input,
+textarea.invalid-input {
+	border-color: #9f1d1d;
+	box-shadow: 0 0 0 4px rgba(159, 29, 29, 0.12);
+}
+
+input.valid-input,
+textarea.valid-input {
+	border-color: #2f6b3f;
+	box-shadow: 0 0 0 4px rgba(47, 107, 63, 0.12);
+}

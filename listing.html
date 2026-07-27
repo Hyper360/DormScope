@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dorm Scope | York University Listing</title>
+  <title>Dorm Scope | Listing</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/listing.css">
-  <script type="module" src="js/components/index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/components/index.js"></script>
+  <script src="js/listing.js" defer></script>
 </head>
 
 <body>
@@ -16,72 +19,8 @@
   </header>
 
   <main>
-    <article class="listing-page">
-      <p><a href="search.html">Back to search</a></p>
-
-      <section class="listing-hero">
-        <img src="https://www.yorku.ca/housing/wp-content/uploads/sites/57/nggallery/stong-residence/Stong-double-2.JPG" alt="York University Stong Residence">
-        <div class="listing-summary">
-          <h1>York University Stong Residence</h1>
-          <p><strong>$930 / Bedroom</strong></p>
-          <p>0.7 km from York University</p>
-          <p>Private room in residence</p>
-          <p>Available now</p>
-          <p>Utilities included</p>
-          <p>4.5★ (22 reviews)</p>
-          <p>Furnished</p>
-          <p>Listed by: York University Housing</p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Description</h2>
-        <p>Stong Residence at York University offers a private room with utilities included, close campus access, and a fully furnished living space. Ideal for students who want a convenient, on-campus living experience with study areas and social spaces nearby.</p>
-      </section>
-
-      <section>
-        <h2>Utilities</h2>
-        <ul>
-          <li>Air conditioning</li>
-          <li>Internet</li>
-          <li>Heating</li>
-          <li>Washer & Dryer</li>
-          <li>Cable TV</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Amenities</h2>
-        <ul>
-          <li>Swimming pool</li>
-          <li>Gym</li>
-          <li>Sauna</li>
-          <li>Study lounge</li>
-          <li>Secure building access</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>House Rules</h2>
-        <ul>
-          <li>No overnight guests</li>
-          <li>No cannabis</li>
-          <li>No pets allowed</li>
-          <li>Quiet hours after 11pm</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Reviews</h2>
-        <div class="review-item">
-          <strong>Jasmine</strong> - 5★
-          <p>Excellent campus location and everything was included. Very comfortable for the semester.</p>
-        </div>
-        <div class="review-item">
-          <strong>Omar</strong> - 4★
-          <p>Great value and utilities included, though the building can be busy during move-in.</p>
-        </div>
-      </section>
+    <article id="listing-content" class="listing-page" aria-live="polite">
+      <p>Loading listing...</p>
     </article>
   </main>
 

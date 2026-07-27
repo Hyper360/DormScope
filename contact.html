@@ -7,7 +7,8 @@
   <title>Dorm Scope | Contact</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/contact.css">
-  <script type="module" src="js/components/index.js"></script>
+  <script src="js/components/index.js"></script>
+  <script src="js/contact.js" defer></script>
 </head>
 
 <body>
@@ -25,14 +26,14 @@
       <h2>Contact Information</h2>
       <address>
         <p>Email: <a href="mailto:test@my.yorku.ca">test@my.yorku.ca</a></p>
-        <p>Phone: <a href="tel:+11234567890">123-456-7890</a></p>
+        <p>Phone: <a href="tel:+11234567890">123&#8209;456&#8209;7890</a></p>
         <p>Address: 1 University Boulevard, Markham, Ontario, Canada</p>
       </address>
     </section>
 
     <section>
       <h2>Send a Message</h2>
-      <form action="#" method="post">
+      <form id="contact-form" novalidate>
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -49,6 +50,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
         </div>
+        <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
         <button type="submit">Send Message</button>
       </form>
     </section>

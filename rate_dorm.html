@@ -7,7 +7,11 @@
   <title>Dorm Scope | Rate a Dorm</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/rate_dorm.css">
-  <script type="module" src="js/components/index.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/components/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/rate_dorm.js" defer></script>
 </head>
 
 <body>
@@ -22,13 +26,14 @@
     </section>
 
     <section class="rate-form-section">
-      <form class="rate-form" action="#" method="post">
+      <p class="rate-context" aria-live="polite">Checking which dorm you want to review...</p>
+      <form class="rate-form">
         <fieldset class="rate-fieldset">
           <legend>Leave a rating</legend>
 
           <div class="rate-field">
-            <label for="dorm-name">Dorm name</label>
-            <input type="text" id="dorm-name" name="dorm-name" placeholder="Dorm A" required>
+            <label for="author-name">Your name</label>
+            <input type="text" id="author-name" name="author-name" placeholder="Your first name" required>
           </div>
 
           <div class="rate-field">
